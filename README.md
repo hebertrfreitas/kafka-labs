@@ -23,15 +23,29 @@ Assum-se o nome `broker` para o container pois assim está definido no arquivo `
 
 
 
-Listando tópicos
+**Listando tópicos**
 ```sh
 docker exec -t broker kafka-topics --bootstrap-server localhost:9092 --list
 ```
 
-Criando tópico
+**Criando tópico**
 ```sh
 docker exec -t broker kafka-topics --bootstrap-server localhost:9092 --create --replication-factor 1 --partitions 1 --topic EXAMPLE_TOPIC
-````
+```
+
+**Iniciando um produtor**
+```sh
+docker exec -it broker kafka-console-producer --broker-list localhost:9092 --topic EXAMPLE_TOPIC
+```
+Neste modo iterativo cada linha digitada é uma nova mensagem enviada ao tópico.
+
+**Iniciando um consumidor**
+```sh
+docker exec -it broker kafka-console-consumer --bootstrap-server localhost:9092 --topic EXAMPLE_TOPIC --from-beginning
+```
+O parâmetro `--from-beginning` informa que você deseja ler tudo que está no tópico desde o início. Caso não seja informado este parâmetro o consumidor apenas lerá as novas mensagens enviadas a partir do momento em que ele foi iniciado.
+
+
 
 
 
