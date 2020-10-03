@@ -59,6 +59,29 @@ Neste caso, as mensagens enviadas para o tópico `EXAMPLE_TOPIC` serão consumid
 
 
 
+**Entendendo o conceito de partições dentro de um tópico**
+
+No momento da criação de um tópico é possível definir quantas partições o mesmo terá.
+
+Partições são como espaços diferentes onde o Kafka colocará mensagens dentro do mesmo tópico.
+
+Partições são especialmente úteis quando deseja-se ter mais de um consumidor por tópico
+<br>
+Neste cenário, cada consumidor ao entrar ficará responsável por uma ou mais partições(no momento da entrada de um novo consumidor do tópico as partições são "rebalanceadas" entre os consumidores existentes).<br>
+
+
+ - *OBS:* aqui ainda permence válida a regra dos grupos explicada no tópico anterior.
+
+ - *OBS 2:* não adianta ter um número de consumidores maior do que o número de partições pois fatalmente um ou mais consumidores não terão partições para ler, ou seja, uma partição só pode ser lida por um consumidor, não existe a possibilidade de dois consumidores compartilharem a mesma partição.
+
+ - *OBS 3:* Do ponto de vista do produtor, ele somente conseguirá colocar mensagens em partições diferentes se a chave das mensagens for diferente, pois é usado um algoritmo de hash para definição de qual partição recebe qual chave.
+
+
+
+**Como alterar a quantidade de partições de um tópico já criado**
+
+
+
 
 
 
