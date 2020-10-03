@@ -46,7 +46,7 @@ docker exec -it broker kafka-console-consumer --bootstrap-server localhost:9092 
 O parâmetro `--from-beginning` informa que você deseja ler tudo que está no tópico desde o início. Caso não seja informado este parâmetro o consumidor apenas lerá as novas mensagens enviadas a partir do momento em que ele foi iniciado.
 
 
-**Informações importantes**
+**Entendendo o conceito de grupos de consumidores**
 
 Ao consumir um tópico programaticamente é necessário definir um grupo.
 Quando dois consumidores se conectam usando o mesmo grupo, as mensagens são lidas ou por um ou pelo outro, não por ambos.<br>
