@@ -18,7 +18,9 @@ docker-compose up -d
 
 ### Iteragindo com o kafka
 
-disclaimer: os comandos a seguir são executados externamente do container docker onde está sendo executado o kafka. <br>
+*disclaimer 1*: os comandos a seguir são executados externamente do container docker onde está sendo executado o kafka. <br>
+*disclaimer 2*: caso você queira que as informações dos containers sejam persistentes, descomente as linhas referentes aos volumes no arquivo `docker-compose.yaml`
+
 Assum-se o nome `broker` para o container pois assim está definido no arquivo `docker-compose.yaml`
 
 
@@ -79,6 +81,13 @@ Neste cenário, cada consumidor ao entrar ficará responsável por uma ou mais p
 
 
 **Como alterar a quantidade de partições de um tópico já criado**
+
+
+***Detalhes dos tópicos criados e consumidores***
+
+```sh
+docker exec -t broker kafka-consumer-groups --bootstrap-server localhost:9092 --all-groups --describe
+```
 
 
 
