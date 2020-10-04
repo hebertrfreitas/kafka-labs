@@ -90,6 +90,11 @@ docker exec -t broker kafka-consumer-groups --bootstrap-server localhost:9092 --
 ```
 
 
+### Exemplos em java
+
+Na pasta [java-example](java-example) existem dois projetos em spring boot, um para o produtor e outro para um consumidor.
+
+
 
 
 
