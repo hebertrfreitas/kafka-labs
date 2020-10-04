@@ -3,6 +3,12 @@
 Repositório criado com o objetivo de aprender mais sobre o Kafka
 
 
+- [Montagem do docker](#montagem-do-docker)
+- [Iteragindo com o Kafka](#iteragindo-com-o-kafka)
+- [Exemplos em Java](#exemplos-em-java)
+
+
+
 ### Montagem do docker
 
 A estrutura do arquivo `docker-compose.yaml` foi criada a partir dos exemplos da confluent. <br>
