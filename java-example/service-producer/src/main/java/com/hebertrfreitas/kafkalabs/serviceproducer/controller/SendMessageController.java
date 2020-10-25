@@ -15,7 +15,6 @@ public class SendMessageController {
 
     private final OrderProducerService orderProducerService;
 
-
     public SendMessageController(OrderProducerService orderProducerService) {
         this.orderProducerService = orderProducerService;
     }
